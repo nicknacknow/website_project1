@@ -1,0 +1,91 @@
+html {
+    scrollbar-color: hsl(0,0%, 67%) transparent;
+}
+
+#app {
+    display: block;
+    left: 0;
+    min-height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+
+    background: #0f0f0f;
+}
+
+div, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+#container {
+    height: 56px;
+    padding-right: 16px;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #0f0f0f;
+}
+
+.start, .center, .end, #buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.center {
+    flex: 0 1 732px;
+    min-width: 0;
+}
+
+.end {
+    flex: none;
+    min-width: 225; /*min width of items in end*/
+    
+    justify-content: flex-end;
+}
+
+#buttons>*:not(:last-child) {
+    margin-right: 8px;
+}
+
+/* all buttons with topbar class */
+button.topbar {
+    background: none;
+    border: none;
+    outline: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1px 6px;
+}
+
+#img-holder.topbar {
+    width: 32px;
+    height: 32px;
+    
+    margin: 0 8px;
+    border-radius: 50%;
+
+    cursor: pointer;
+    overflow: hidden;
+    
+    background-color: transparent;
+}
+
+img { 
+    -webkit-tap-highlight-color: blue;
+}
