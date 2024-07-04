@@ -1,6 +1,14 @@
 html {
     scrollbar-color: hsl(0,0%, 67%) transparent;
+
+    --main-background-color: #0f0f0f;
+
+    --main-app-zindex: 10;
 }
+
+/*html[light] { if html tag has light attribute
+    scrollbar-color: hsl(0,0%, 33%) transparent;
+}*/
 
 #app {
     display: block;
@@ -9,6 +17,18 @@ html {
     position: absolute;
     right: 0;
     top: 0;
+
+    z-index: var(--main-app-zindex);
+}
+
+#popup {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    right: 0;
 }
 
 body {
@@ -16,8 +36,10 @@ body {
     margin: 0;
     overflow-y: scroll;
 
-    background: #0f0f0f;
+    background: var(--main-background-color);
 }
+
+
 
 div, img {
     margin: 0;
@@ -28,14 +50,14 @@ div, img {
 
 #container {
     height: 56px;
-    padding-right: 16px;
+    padding: 0 16px;
     
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
-    background: #0f0f0f;
+    background: var(--main-background-color);
 }
 
 .start, .center, .end, #buttons {
@@ -70,7 +92,9 @@ button.topbar {
     align-items: center;
     justify-content: center;
 
-    padding: 1px 6px;
+    padding: 2px 6px;
+
+    
 }
 
 #img-holder.topbar {
@@ -86,6 +110,91 @@ button.topbar {
     background-color: transparent;
 }
 
-img { 
-    -webkit-tap-highlight-color: blue;
+#img-holder.topbar:active {
+    border: 1px solid #ff433e;
 }
+
+#button-holder {
+    width: 40px;
+    height: 40px;
+
+    display: inline-block;
+    position: relative;
+}
+
+#menu-button {
+    cursor: pointer;
+    fill:white;
+
+    width: 100%;
+    height: 100%;
+    
+    padding: 8px;
+    
+    border: none;
+    background: none;
+
+    border-radius: 50%;
+}
+
+#menu-button:hover {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+/*#menu-button:active {
+    background-color: rgba(255, 255, 255, .18) !important;
+}*/
+
+#interaction {
+    display: inline-block;
+    position: absolute;
+    
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    pointer-events: none;
+}
+
+#interaction .fill {
+    background-color: white;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    opacity: 0;
+    border-radius: 50%;
+}
+
+#button-holder:active #interaction .fill {
+    opacity: 0.1;
+}
+
+#interaction .stroke {
+    border-radius: 50%;
+
+    border: 1px solid white;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#button-holder:hover:active #interaction .stroke {
+    visibility: hidden;
+    opacity: 0.5;
+    transition: visibility 0s 2s, opacity 2s linear;
+} 
+
+/* need to sort this transition out
+https://stackoverflow.com/questions/15907079/css3-transition-fade-out-effect
+
+need to transition on mouse UP ... so some JS prob needed
+
+*/
