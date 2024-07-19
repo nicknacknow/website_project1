@@ -1,20 +1,24 @@
-/*const menu_button = document.querySelector("#menu-button");
+let current_interaction = null;
 
-let current_down = null;
+document.addEventListener("mousedown", (e) => {
+    let btn = null;
+    if (e.target && (btn = e.target.closest("interaction-button"))) {
+        if (current_interaction != null) current_interaction.classList.remove("down");
+        current_interaction = btn.querySelector("#interaction");
+        
+        current_interaction.classList.add("down");
 
-menu_button.addEventListener("mousedown", (e) => {
-    if (current_down != null) current_down.classList.remove("down");
-    current_down = menu_button;
-
-    current_down.classList.add("down");
-
-    e.stopPropagation();
+        e.stopPropagation();
+    }
 });
 
 document.addEventListener("mouseup", (e) => {
-    if (current_down != null) current_down.classList.remove("down");
+    if (current_interaction != null) current_interaction.classList.remove("down");
 });
 
+
 document.querySelector("#avatar-btn").addEventListener("click", (e) => {
-    console.log(e);
-});*/
+    document.querySelector('#popup').style.zIndex = 11;
+});
+
+console.log(getComputedStyle(document.body).getPropertyValue("--main-app-zindex"));

@@ -1,0 +1,56 @@
+html {
+    scrollbar-color: hsl(0,0%, 67%) transparent;
+
+    --main-background-color: #0f0f0f;
+    --main-app-zindex: 10;
+
+    --interaction-max-opacity: 0.3;
+    --interaction-ease-time: 0.25s;
+
+    --select-button-highlight-color: red;
+}
+
+/*html[light] { if html tag has light attribute
+    scrollbar-color: hsl(0,0%, 33%) transparent;
+}*/
+
+#app {
+    display: block;
+    position: absolute;
+
+    width: 100%;
+    min-height: 100%;
+
+    left: 0;
+    right: 0;
+    top: 0;
+
+    z-index: var(--main-app-zindex);
+}
+
+#popup {
+    display: block;
+    position: absolute;
+
+    width: 100%;
+    min-height: 100%;
+
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+
+    background-color: var(--main-background-color);
+}
+
+div, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}

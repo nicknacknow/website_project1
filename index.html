@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="styles/topbar.css">
+        <link rel="stylesheet" href="styles/interaction-button.css">
     </head>
 
     <body>
@@ -9,7 +11,7 @@
             <div id="container">
                 <div class="start">
 
-                    <div id="button-holder">
+                    <interaction-button>
                         <button id="menu-button">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false">
                                 <path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path>
@@ -19,17 +21,23 @@
                             <div class="fill"></div>
                             <div class="stroke"></div>
                         </div>
-                    </div>
+                    </interaction-button>
 
                 </div>
 
                 <div class="center">
                     <!-- search form here -->
-                        <p style="color:red;">yo</p>
+                        <p>yo</p>
                 </div>
 
                 <div id="buttons" class="end">
-                    <button id="avatar-btn" class="topbar" aria-haspopup="true" aria-label="Account menu" onclick="document.querySelector('#popup').style.zIndex = 11;">
+                    <div>
+                        <a>
+                            hi
+                        </a>
+                    </div>
+
+                    <button id="avatar-btn" class="topbar" aria-haspopup="true" aria-label="Account menu">
                         <div id="img-holder" class="topbar">
                             <img draggable="false" alt="Avatar image" height="32" width="32" src="https://yt3.ggpht.com/tchdzEGD3hVAM8zfk9pEyz6xNfJVnUbm0m8K8rBOZ2bZwu7To9EALaP_x5ZGumchS2FaBW8d=s88-c-k-c0x00ffffff-no-rj">
                         </div>
