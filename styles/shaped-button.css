@@ -1,0 +1,17 @@
+shaped-button {
+
+}
+
+shaped-button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    color: #3ea6ff;
+    border-color: rgba(255, 255, 255, 0.2);
+
+    padding: 0 15px;
+}
