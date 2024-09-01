@@ -1,3 +1,7 @@
+:root {
+    --select-button-highlight-color: red;
+}
+
 #container {
     height: 56px;
     padding: 0 16px;

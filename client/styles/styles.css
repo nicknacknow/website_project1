@@ -1,13 +1,10 @@
 html {
     scrollbar-color: hsl(0,0%, 67%) transparent;
+}
 
+:root {
     --main-background-color: #0f0f0f;
     --main-app-zindex: 10;
-
-    --interaction-max-opacity: 0.3;
-    --interaction-ease-time: 0.25s;
-
-    --select-button-highlight-color: red;
 }
 
 /*html[light] { if html tag has light attribute
@@ -53,4 +50,42 @@ div, img {
     padding: 0;
     border: 0;
     background: transparent;
+}
+
+
+
+#logo-button {
+    margin-left: 15px;
+    border: 1px solid grey;
+
+    height: 32px;
+    border-radius: 20px;
+
+    box-shadow: rgba(255, 200, 255, 0.3) 0px 0px 10px 0px;
+}
+
+
+/* maybe create rainbow gradient gif? */
+#logo-button img {
+    width: 90px;
+    border-radius: 20px;
+    
+    /*object-fit: contain;*/
+    content: url("/content/img/logo/pink.png")
+}
+
+#logo-button img:hover {
+    content: url("/content/img/logo/plain.png")
+}
+
+#logo-button img:active {
+    content: url("/content/img/logo/purp.png")
+}
+
+
+
+
+
+#side-guide {
+    width: 240px;
 }
