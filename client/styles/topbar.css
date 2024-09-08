@@ -1,9 +1,16 @@
 :root {
     --select-button-highlight-color: red;
+
+    --topbar-container-height: 56px;
 }
 
 #container {
-    height: 56px;
+    position: fixed;
+
+    height: var(--topbar-container-height);
+
+    width: calc(100% - 32px);
+
     padding: 0 16px;
     
     display: flex;
@@ -72,4 +79,42 @@ topbar button styles:
 
 #img-holder.topbar:active {
     border: 1px solid var(--select-button-highlight-color);
+}
+
+
+
+
+/*
+
+topbar logo button styles:
+
+*/
+
+
+#logo-button {
+    margin-left: 15px;
+    border: 1px solid grey;
+
+    height: 32px;
+    border-radius: 20px;
+
+    box-shadow: rgba(255, 200, 255, 0.3) 0px 0px 10px 0px;
+}
+
+
+/* maybe create rainbow gradient gif? */
+#logo-button img {
+    width: 90px;
+    border-radius: 20px;
+    
+    /*object-fit: contain;*/
+    content: url("/content/img/logo/pink.png")
+}
+
+#logo-button img:hover {
+    content: url("/content/img/logo/plain.png")
+}
+
+#logo-button img:active {
+    content: url("/content/img/logo/purp.png")
 }

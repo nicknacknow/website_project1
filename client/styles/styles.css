@@ -5,6 +5,8 @@ html {
 :root {
     --main-background-color: #0f0f0f;
     --main-app-zindex: 10;
+
+    --sidebar-width: 240px;
 }
 
 /*html[light] { if html tag has light attribute
@@ -54,38 +56,44 @@ div, img {
 
 
 
-#logo-button {
-    margin-left: 15px;
-    border: 1px solid grey;
-
-    height: 32px;
-    border-radius: 20px;
-
-    box-shadow: rgba(255, 200, 255, 0.3) 0px 0px 10px 0px;
-}
-
-
-/* maybe create rainbow gradient gif? */
-#logo-button img {
-    width: 90px;
-    border-radius: 20px;
-    
-    /*object-fit: contain;*/
-    content: url("/content/img/logo/pink.png")
-}
-
-#logo-button img:hover {
-    content: url("/content/img/logo/plain.png")
-}
-
-#logo-button img:active {
-    content: url("/content/img/logo/purp.png")
-}
-
-
 
 
 
 #side-guide {
-    width: 240px;
+    position: fixed;
+
+    top: var(--topbar-container-height);
+
+    width: var(--sidebar-width);
+    height: calc(100% - var(--topbar-container-height));
+}
+
+/*
+need min width sideguide stuff to change
+also things inside should collapse into just image logo
+*/
+
+#page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+
+    top: var(--topbar-container-height);
+    left: var(--sidebar-width);
+
+    width: calc(100% - var(--sidebar-width));
+    height: calc(100% - var(--topbar-container-height));
+
+    z-index: -1;
+}
+
+#content-container {
+    position: relative;
+    right: calc(var(--sidebar-width) / 2); /* this may require some future attention */
+    
+    width: 50%;
+
+    height: 150rem;
 }
